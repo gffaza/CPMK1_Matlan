@@ -1,100 +1,119 @@
-#CPMK - 19523118 - 19523201 - 19523199
+---
+title: "CPMK1 - 19523118 - 19523201 - 19523199"
+output: html_notebook
+---
+
+#CPMK1 - 19523118 - 19523201 - 19523199
 library(matlib)
 
 #1 . Matrix
 
 #a) 
+```{r}
 A <- matrix( c( 1,2,3,4,5,6,7,8,9), 3, 3, TRUE)
 colnames(A) <- c('col1','col2','col3')
 rownames(A) <- c('row1','row2','row3')
 A
-
+```
 #b)
+```{r}
 diag(A)
-
+```
 #c)
+```{r}
 det(A)
-
+```
 #d)
+```{r}
 Solve(A)
-
+```
 #e)
+
+```{r}
 t(A) %*% A
+```
 
 #f)
+
+```{r}
 eigen(A)
-
-
+```
 #2. Matrix
-
+```{r}
 B <- matrix( c(1,1,3, 5,2,6, -2,-1,-3), 3, 3, TRUE)
 B
-
+```
 #a 
+```{r}
 B <- B%*%B%*%B
 B
-
+```
 #b
+```{r}
 B <- matrix( c(1,1,2, 5,2,7, -2,-1,-3), 3, 3, TRUE)
 B
-
-
+```
 #3. Matrix
+```{r}
 
 M <- matrix( c( 1,2,3,8,2,9), 3, 2, TRUE)
 M
 
 N <- matrix( c( 5,4,8,2), 2, 2, TRUE)
 N
-
+```
 #a)
+```{r}
 M %*% N
-
+```
 #b)
+```{r}
 M %*% solve(N)
-
+```
 #c)
+```{r}
 M %*% t(N)
-
+```
 #d)
+```{r}
 3 *( (M %*% solve(N)) +( M %*% t(N) ) )
-
+```
 #4 SPL
+```{r}
 J <- matrix( c(1, -2, 3, 2, 1, 1, -3, 2, -2), 3, 3, TRUE)
 J
 
 j <- c(7, 4, -10)
 j
-
+```
 # show the equation
+```{r}
 showEqn(J , j ) 
-
+```
 # find solution
+```{r}
 Solve(J , j ) 
-
+```
 # Plot equation
+```{r}
 plotEqn3d(J , j )
-
-# ecelon form
+```
+# echelon form
+```{r}
 echelon(J, j, verbose= TRUE, fraction= TRUE)
-
+```
 #5 
-
+```{r}
 X <- matrix( c( 1,2,3,4,5,6,7,8,9), 3, 3, TRUE)
 X
-
 for (r in 1:3 ){
-  
   for (c in 1:3 ){
-    
     if( r==1 ){
-      
       if( c==1 | c==2 | c==3){
         X[r,c]=0
       }
     }
     if ( c==1 ){
-      
       if ( r==2 | r==3 ){
         X[r,c]=1
       }
@@ -102,4 +121,7 @@ for (r in 1:3 ){
   }
 }
 X
+```
+
+
 
